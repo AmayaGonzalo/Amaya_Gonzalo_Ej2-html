@@ -1,19 +1,17 @@
 let btnCrear = document.querySelector("#btnCrear");
 let ingreso = document.getElementById("ingreso");
-let contador;
-let h1 = document.querySelector("h1");
+let cajas = document.querySelector(".cajas");
 
-function crearCaja() {
+function crearCaja(cantidad) {
   let i = 0;
   for (i; i < cantidad; i++) {
     let caja = document.createElement("div");
-    caja.classList.add(".caja");
-    h1.appendChild(caja);
+    caja.classList.add("caja");
+    cajas.appendChild(caja);
   }
 }
 
 btnCrear.addEventListener("click", () => {
-  ingreso = String(ingreso.value);
-  cantidad = parseInt(ingreso);
-  crearCaja();
+  let cantidad = Number(ingreso.value);
+  crearCaja(cantidad);
 });
